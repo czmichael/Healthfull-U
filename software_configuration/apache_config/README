@@ -1,0 +1,2 @@
+* "workers.properties" is used to connect apache with tomcat, should be put under "...../apache2/conf
+* "httpd.conf" should also be put under "..../apache2/conf"

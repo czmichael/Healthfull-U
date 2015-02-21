@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomSearchEngine id="gxma0v6zh2w"
+			        volunteers="false" 
+                    creator="009110980850588499485" 
+                    language="zh-Hans"
+                    sitesearch="true" 
+                    enable_suggest="true"
+                    encoding="UTF-8"
+                    autocompletions="true">
+  
+  <Title>ruhewiki</Title>
+  
+  <Description>ruhewiki site search</Description>
+  
+  <Context>
+    <BackgroundLabels>
+      <Label name="_cse_gxma0v6zh2w" 
+             mode="FILTER" />
+      <Label name="_cse_exclude_gxma0v6zh2w" 
+             mode="ELIMINATE" />
+    </BackgroundLabels>
+  </Context>
+  <LookAndFeel code="2" 
+  			   nonprofit="false" 
+  			   googlebranding="smwidb" 
+  			   element_layout="1" 
+  			   theme="1" 
+  			   custom_theme="true" 
+  			   text_font="Arial, sans-serif" 
+  			   url_length="full" 
+  			   element_branding="show">
+    <Logo />
+    <Colors url="#000000" 
+            background="#FFFFFF" 
+            border="#FFFFFF" 
+            title="0716a7" 
+            text="#000000" 
+            visited="0716a7" 
+            title_hover="0716a7" 
+            title_active="0716a7" />
+            
+    <Promotions title_color="0716a7" 
+                title_visited_color="0716a7" 
+                url_color="#008000" 
+                background_color="#FFFFFF" 
+                border_color="#336699" 
+                snippet_color="#000000" 
+                title_hover_color="0716a7" 
+                title_active_color="0716a7" />
+                
+    <SearchControls input_border_color="#BCCDF0" 
+                    button_border_color="#666666" 
+                    button_background_color="#CECECE" 
+                    tab_border_color="#E9E9E9" 
+                    tab_background_color="#E9E9E9" 
+                    tab_selected_border_color="#FF9900" 
+                    tab_selected_background_color="#FFFFFF" />
+                    
+    <Results border_color="#FFFFFF" 
+             border_hover_color="#FFFFFF" 
+             background_color="#FFFFFF" 
+             background_hover_color="#FFFFFF" />
+  </LookAndFeel>
+  
+  <AdSense />
+  
+  <EnterpriseAccount>
+    <AccountAdmin first_name="Zhi" 
+                  last_name="Chen" 
+                  email="cz.michael@gmail.com" 
+                  phone="301-642-9132" 
+                  country="CN" 
+                  job_title="" />
+    <Organization name="ZTech" 
+                  type="business" 
+                  size="20" />
+                  
+    <ContractInfo cse_type="2" 
+                  expired="false" />
+  </EnterpriseAccount>
+</CustomSearchEngine>

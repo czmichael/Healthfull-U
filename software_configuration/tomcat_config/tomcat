@@ -1,0 +1,43 @@
+#/bin/bash
+# This file should be put under /etc/init.d/
+# This link should be create:
+# cd /etc/rc5.d
+# ln -s ../init.d/tomcat S71tomcat
+#
+# ============== following 3 lines are required ===========
+# processname: tomcat
+# chkconfig: 2345 95 20
+# description: Start up the Tomcat servlet engine.
+# ================
+
+
+RETVAL=$?
+export JAVA_HOME=/usr/java/jre1.6.0_24
+export CATALINA_OPTS="-Xms512m -Xmx1024m"
+export PATH=$PATH:$JAVA_HOME/bin
+
+export CATALINA_HOME=/usr/local/tomcat-7.0.12
+export PATH=$PATH:$CATALINA_HOME/bin
+
+case "$1" in
+ start)
+        if [ -f $CATALINA_HOME/bin/startup.sh ];
+          then
+	    echo $"Starting Tomcat"
+            $CATALINA_HOME/bin/startup.sh
+        fi
+	;;
+ stop)
+        if [ -f $CATALINA_HOME/bin/shutdown.sh ];
+          then
+	    echo $"Stopping Tomcat"
+            $CATALINA_HOME/bin/shutdown.sh
+        fi
+ 	;;
+ *)
+ 	echo $"Usage: $0 {start|stop}"
+	exit 1
+	;;
+esac
+
+exit $RETVAL

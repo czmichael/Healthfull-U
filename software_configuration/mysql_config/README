@@ -1,0 +1,1 @@
+the "my.cnf" should be placed under /etc, make sure both mysql group and mysql user exist.

@@ -1,0 +1,1 @@
+* "server.xml" is used to configure tomcat, should be put under "...../tomcat-X.X.X/conf
