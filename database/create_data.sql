@@ -1,0 +1,1 @@
+insert into healthfulu.user values (null, 'cz.michael@gmail.com', '123456', 'Zhi Chen');

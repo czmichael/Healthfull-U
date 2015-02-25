@@ -1,29 +1,47 @@
 <!doctype html>
 <html lang="en" ng-app="healthfullUApp">
 <head>
-	<meta charset="utf-8">
-	<title>Healthfull U</title>
-	
- 	<link rel="stylesheet" href="/static/css/bootstrap.css" />
-	<link rel="stylesheet" href="/static/css/main.css" />
-	<link rel="stylesheet" href="/static/css/bootstrap-responsive.css" />
-	<script src="/static/js/bootstrap/bootstrap.js"></script>
-	<script src="/static/js/jquery/jquery-1.10.2.js"></script>
-	<script src="/static/js/jquery/jquery-ui-1.10.4.js"></script>
-	<script src="/static/js/angular/angular.js"></script>
-	<script src="/static/js/angular/angular-route.js"></script>
-	<script src="/static/js/app.js"></script>
+<meta charset="utf-8">
+<title>Healthfull U</title>
+
+<link rel="stylesheet" href="/static/css/bootstrap.css" />
+<link rel="stylesheet" href="/static/css/main.css" />
+<link rel="stylesheet" href="/static/css/bootstrap-responsive.css" />
+<script src="/static/js/bootstrap/bootstrap.js"></script>
+<script src="/static/js/jquery/jquery-1.10.2.js"></script>
+<script src="/static/js/jquery/jquery-ui-1.10.4.js"></script>
+<script src="/static/js/angular/angular.js"></script>
+<script src="/static/js/angular/angular-route.js"></script>
+<script src="/static/js/app.js"></script>
 </head>
 
 <body ng-controller="UserCtrl">
 
-	<div class="hello">hello there, {{name}}</div>
-	
-	<table>
-		<tr><td>user:</td><td>{{user.userId}}</td></tr>
- 		<tr><td>email:</td><td>{{user.email}}</td></tr>
-		<tr><td>password:</td><td>{{user.password}}</td></tr> 
-	</table>
+	<div class="hello">hello, {{name}}</div>
+
+	<ul>
+		<li ng-repeat="user in users">
+			<span>{{user.id}}</span>
+			<p>{{user.email}}</p>
+			<p>{{user.password}}</p>
+		</li>
+	</ul>
+
+
+	<!-- <table>
+		<tr>
+			<td>user:</td>
+			<td>{{user.userId}}</td>
+		</tr>
+		<tr>
+			<td>email:</td>
+			<td>{{user.email}}</td>
+		</tr>
+		<tr>
+			<td>password:</td>
+			<td>{{user.password}}</td>
+		</tr>
+	</table> -->
 
 </body>
 </html>
