@@ -40,16 +40,16 @@ public class FatSecretRestServiceUtil {
 		
 
 		StringBuilder params = new StringBuilder("");
-		params.append("date=16288&");
+		params.append("date=16289&");
 		params.append("format=json&");
 		params.append("method=food_entries.get&");
 		params.append("oauth_consumer_key=" + consumerKey + "&");
-//		params.append("oauth_nonce=" + 123 + new Date().getTime() + "&");
-		params.append("oauth_nonce=" + 1424830768 + "&");
+		params.append("oauth_nonce=" + 123 + new Date().getTime() + "&");
+
 		
 		params.append("oauth_signature_method=HMAC-SHA1&");
 		params.append("oauth_timestamp=" + new Date().getTime() + "&");
-//		params.append("oauth_timestamp=" + 1424830768 + "&");
+
 		
 		params.append("oauth_token=" + URLEncoder.encode(oauthToken, "UTF-8") + "&");
 		params.append("oauth_version=1.0");
