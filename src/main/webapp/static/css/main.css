@@ -17,3 +17,42 @@ body {
 	border: 4px solid blue;
 	
 }
+
+.food-entry-nutrition-fact {
+	border: 2px solid black;
+	width: 220px;
+	margin: 100px;
+}
+
+.food-entry-nutrition-fact div {
+	border-bottom: 1px solid black;
+	padding: 1px 5px;
+}
+
+.food-entry-nutrition-fact-heading {
+	font-weight: bold;
+	margin: 5px 10px 5px 5px;
+}
+
+.food-entry-nutrition-fact-sub-heading {
+	margin: 5px 10px 5px 5px;
+}
+
+.food-entry-nutrition-fact-sub2-heading {
+	margin: 5px 10px 5px 25px;
+}
+.food-entry-nutrition-fact-green {
+	background-color: #9FD490;
+}
+
+.food-entry-nutrition-fact-gray {
+	background-color: #C7C7C7;
+}
+
+.food-entry-nutrition-fact-yellow {
+	background-color: #F7F48D;
+}
+
+.food-entry-nutrition-fact-red {
+	background-color: #F79292;
+}
