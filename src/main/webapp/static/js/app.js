@@ -2,13 +2,30 @@
 
 var healthfullUApp = angular.module('healthfullUApp', []);
 
-var dev_url = 'http://localhost:8080/rest/json/user/get';
+var userUrl = 'http://localhost:8080/rest/json/user/get';
+var foodEntryUrl = 'http://localhost:8080/rest/json/food_entry/get'
 
 healthfullUApp.controller('UserCtrl', function($scope, $http) {
 
-	$http.get(dev_url).success(function(data) {
+	$http.get(userUrl).success(function(data) {
 		$scope.users = data;
 	});
 
-	$scope.name = 'World 1';
+
+	$http.get(foodEntryUrl).success(function(data) {
+		$scope.foodEntries = data;
+		
+		
+		$scope.dailyTotal = getDailyTotal($scope.foodEntries);
+		
+	});
 });
+
+
+function getDailyTotal(foodEntries) {
+	var totalCalories = 0;
+	for (var i = 0; i < foodEntries.length; i++) {	
+		totalCalories = totalCalories + foodEntries[i].calories;
+	}
+	return totalCalories;
+}

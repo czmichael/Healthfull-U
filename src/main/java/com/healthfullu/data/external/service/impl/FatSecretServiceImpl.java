@@ -74,7 +74,7 @@ for (FoodEntry foodEntry: foodEntries.getFood_entry()) {
 	
 }
 
-		return null;
+		return foodEntries.getFood_entry();
 	}
 	
 	

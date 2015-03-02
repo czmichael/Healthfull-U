@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="healthfullUApp">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="../../favicon.ico">
+
+<title>Healthfull U</title>
+
+<link rel="stylesheet" href="/static/css/bootstrap.css" />
+<link rel="stylesheet" href="/static/css/main.css" />
+<link rel="stylesheet" href="/static/css/bootstrap-responsive.css" />
+</head>
+
+<body ng-controller="UserCtrl">
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Project name</a>
+			</div>
+
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</nav>
+
+	<div class="container">
+
+		<div class="starter-template">
+			<h2>Sunday - Feb 1, 2015</h2>
+
+			<div class="dail-view-left">
+				<div class="daily-meals">
+					<div class="daily-view-header">Breakfast</div>
+		  			<div class="daily-view-entry">1 regular slice Toasted Bread</div>
+					<div class="daily-view-entry">1 regular slice Toasted White Bread </div>
+				</div>
+
+				<div class="daily-meals">
+					<div class="daily-view-header">Lunch</div>
+		  			<div class="daily-view-entry">1 slice Deli Turkey or Chicken Breast Meat</div>
+					<div class="daily-view-entry">1 serving Ventera Ranch Chinese Style BBQ Pork Ribs</div>
+					
+				</div>
+
+				<div class="daily-meals">
+					<div class="daily-view-header">Dinner</div>
+		  			<div class="daily-view-entry">4 servings Kraft Singles White American Cheese Slices</div>
+					<div class="daily-view-entry">1 serving Dairy Queen Ice Cream Cake</div>
+				</div>
+
+				<div class="daily-meals">
+					<div class="daily-view-header">Other</div>
+		  			<div class="daily-view-entry">1 can 12 fl oz Cola Soda (with Caffeine)</div>
+					<div class="daily-view-entry">1 regular slice Toasted White Bread </div>
+				</div>
+			</div>
+
+			<div class="dail-view-right">
+
+				<h4>Nutrition Summary of Today</h4>
+				<div class="food-entry-nutrition-fact">
+					
+					
+					
+					<div class="food-entry-nutrition-fact-gray"><span class="food-entry-nutrition-fact-heading">Calories</span>{{dailyTotal}}</span></div>
+
+					<div class="food-entry-nutrition-fact-yellow"><span class="food-entry-nutrition-fact-heading">Total Fat</span><span>{{foodEntry.fat}}g</span></div>
+					<div class="food-entry-nutrition-fact-yellow"><span class="food-entry-nutrition-fact-sub2-heading">Saturated Fat</span><span>{{foodEntry.saturated_fat}}g</span></div>
+					<div class="food-entry-nutrition-fact-yellow"><span class="food-entry-nutrition-fact-sub2-heading">Trans Fat</span><span>{{foodEntry.trans_fat}}g</span></div>
+					<div class="food-entry-nutrition-fact-yellow"><span class="food-entry-nutrition-fact-sub2-heading">Polyunsaturated Fat</span><span>{{foodEntry.polyunsaturated_fat}}g</span></div>
+					<div class="food-entry-nutrition-fact-yellow"><span class="food-entry-nutrition-fact-sub2-heading">Monounsaturated Fat</span><span>{{foodEntry.monounsaturated_fat}}g</span></div>
+
+
+					<div><span class="food-entry-nutrition-fact-heading">Cholesterol</span><span>{{foodEntry.cholesterol}}mg</span></div>
+					<div><span class="food-entry-nutrition-fact-heading">Sodium</span><span>{{foodEntry.sodium}}mg</span></div>
+
+					<div><span class="food-entry-nutrition-fact-heading">Total Carbohydrate</span><span>{{foodEntry.carbohydrates}}g</span></div>
+					<div><span class="food-entry-nutrition-fact-sub2-heading">Dietary Fiber</span><span>{{foodEntry.fiber}}g</span></div>
+					<div><span class="food-entry-nutrition-fact-sub2-heading">Sugars</span><span>{{foodEntry.sugar}}g</span></div>
+					<div><span class="food-entry-nutrition-fact-heading">Proteins</span><span>{{foodEntry.protein}}g</span></div>
+
+					<div class="food-entry-nutrition-fact-red"><span class="food-entry-nutrition-fact-sub-heading">Vitamin A</span><span>{{foodEntry.vitamin_a}}%</span></div>
+					<div class="food-entry-nutrition-fact-red"><span class="food-entry-nutrition-fact-sub-heading">Vitamin C</span><span>{{foodEntry.vitamin_c}}%</span></div>
+					<div class="food-entry-nutrition-fact-red"><span class="food-entry-nutrition-fact-sub-heading">Calcium</span><span>{{foodEntry.calcium}}%</span></div>
+					<div class="food-entry-nutrition-fact-red"><span class="food-entry-nutrition-fact-sub-heading">Iron</span><span>{{foodEntry.iron}}%</span></div>
+					<div class="food-entry-nutrition-fact-red"><span class="food-entry-nutrition-fact-sub-heading">Potassium</span><span>{{foodEntry.potassium}}%</span></div>
+				</div>
+
+			</div>
+			
+		</div>
+	</div>
+	<!-- /.container -->
+
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+
+
+	<script src="/static/js/bootstrap/bootstrap.js"></script>
+    <script src="/static/js/jquery/jquery-1.10.2.js"></script>
+    <script src="/static/js/jquery/jquery-ui-1.10.4.js"></script>
+    <script src="/static/js/angular/angular.js"></script>
+    <script src="/static/js/angular/angular-route.js"></script>
+    <script src="/static/js/app.js"></script> 
+
+	
+</body>
+</html>

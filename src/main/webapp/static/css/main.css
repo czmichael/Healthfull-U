@@ -1,9 +1,10 @@
 body {
-  	padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+  	padding-top: 50px; /* 60px to make the container go all the way to the bottom of the topbar */
 }
-.span03 {
-	width: 	40px;
-	height:	20px;
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
 }
 .mycontent-left {
 	border-right:  1px solid #737373;
@@ -13,15 +14,11 @@ body {
 	margin: 10px 10px 20px 0px;	
 }
 
-.hello {
-	border: 4px solid blue;
-	
-}
 
 .food-entry-nutrition-fact {
 	border: 2px solid black;
-	width: 220px;
-	margin: 100px;
+	width: 300px;
+	margin: 5px;
 }
 
 .food-entry-nutrition-fact div {
@@ -55,4 +52,28 @@ body {
 
 .food-entry-nutrition-fact-red {
 	background-color: #F79292;
+}
+.daily-meals {
+	margin: 10px;
+}
+.dail-view-left {
+	width: 600px;
+	float: left;
+}
+.dail-view-right {
+	float: left;
+	margin: 5px 0px 0px 50px;
+	text-align: left;
+}
+.daily-view-header {
+	text-align: left;
+	padding: 10px;
+	background-color: #337ab7;
+	color: white;
+}
+.daily-view-entry {
+
+	text-align: left;
+	padding: 10px;
+	border-bottom: 1px solid black;
 }
