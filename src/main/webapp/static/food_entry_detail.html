@@ -1,0 +1,29 @@
+<div class="food-entry-nutrition-fact" ng-repeat="foodEntry in foodEntries">
+	<div class="food-entry-nutrition-fact-green">{{foodEntry.meal}}</div>
+	<div class="food-entry-nutrition-fact-green">{{foodEntry.food_entry_description}}</div>
+	<div class="food-entry-nutrition-fact-green">servings {{foodEntry.number_of_units}}</div>
+	
+	<div class="food-entry-nutrition-fact-gray"><span class="food-entry-nutrition-fact-heading">Calories</span>{{foodEntry.calories}}</span></div>
+
+	<div class="food-entry-nutrition-fact-yellow"><span class="food-entry-nutrition-fact-heading">Total Fat</span><span>{{foodEntry.fat}}g</span></div>
+	<div class="food-entry-nutrition-fact-yellow"><span class="food-entry-nutrition-fact-sub2-heading">Saturated Fat</span><span>{{foodEntry.saturated_fat}}g</span></div>
+	<div class="food-entry-nutrition-fact-yellow"><span class="food-entry-nutrition-fact-sub2-heading">Trans Fat</span><span>{{foodEntry.trans_fat}}g</span></div>
+	<div class="food-entry-nutrition-fact-yellow"><span class="food-entry-nutrition-fact-sub2-heading">Polyunsaturated Fat</span><span>{{foodEntry.polyunsaturated_fat}}g</span></div>
+	<div class="food-entry-nutrition-fact-yellow"><span class="food-entry-nutrition-fact-sub2-heading">Monounsaturated Fat</span><span>{{foodEntry.monounsaturated_fat}}g</span></div>
+
+
+	<div><span class="food-entry-nutrition-fact-heading">Cholesterol</span><span>{{foodEntry.cholesterol}}mg</span></div>
+	<div><span class="food-entry-nutrition-fact-heading">Sodium</span><span>{{foodEntry.sodium}}mg</span></div>
+
+	<div><span class="food-entry-nutrition-fact-heading">Total Carbohydrate</span><span>{{foodEntry.carbohydrates}}g</span></div>
+	<div><span class="food-entry-nutrition-fact-sub2-heading">Dietary Fiber</span><span>{{foodEntry.fiber}}g</span></div>
+	<div><span class="food-entry-nutrition-fact-sub2-heading">Sugars</span><span>{{foodEntry.sugar}}g</span></div>
+	<div><span class="food-entry-nutrition-fact-heading">Proteins</span><span>{{foodEntry.protein}}g</span></div>
+
+	<div class="food-entry-nutrition-fact-red"><span class="food-entry-nutrition-fact-sub-heading">Vitamin A</span><span>{{foodEntry.vitamin_a}}%</span></div>
+	<div class="food-entry-nutrition-fact-red"><span class="food-entry-nutrition-fact-sub-heading">Vitamin C</span><span>{{foodEntry.vitamin_c}}%</span></div>
+	<div class="food-entry-nutrition-fact-red"><span class="food-entry-nutrition-fact-sub-heading">Calcium</span><span>{{foodEntry.calcium}}%</span></div>
+	<div class="food-entry-nutrition-fact-red"><span class="food-entry-nutrition-fact-sub-heading">Iron</span><span>{{foodEntry.iron}}%</span></div>
+	<div class="food-entry-nutrition-fact-red"><span class="food-entry-nutrition-fact-sub-heading">Potassium</span><span>{{foodEntry.potassium}}mg</span></div>
+
+</div>

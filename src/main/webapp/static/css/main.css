@@ -17,7 +17,7 @@ body {
 
 .food-entry-nutrition-fact {
 	border: 2px solid black;
-	width: 300px;
+	width: 250px;
 	margin: 5px;
 }
 
@@ -55,6 +55,9 @@ body {
 }
 .daily-meals {
 	margin: 10px;
+}
+.daily-meals div:last-child {
+	border: none;
 }
 .dail-view-left {
 	width: 600px;
