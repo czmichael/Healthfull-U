@@ -29,6 +29,6 @@ public class FatSecretServiceImplTest {
 
 	@Test
 	public void testgetUserFoodEntriesByDate() {
-		fatSecretService.getUserFoodEntriesByDate(null, null);
+		fatSecretService.getUserFoodEntriesByDate(null, 16292);
 	}
 }

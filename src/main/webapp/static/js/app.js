@@ -50,6 +50,30 @@ healthfullUApp.controller('UserCtrl', function($scope, $http) {
 
 
 
+healthfullUApp.controller('FoodCtrl', function($scope, $http) {
+
+	$scope.getFoodInfo = function (date) {
+		var requestURL = foodEntryUrl + '?date=' + date;
+		$scope.foodEntryDate = date;
+		// alert(requestURL);
+
+		$http.get(requestURL).success(function(data) {
+		
+			$scope.foodEntries = data;
+			$scope.foodEntryAggregate = aggregateByMealType($scope.foodEntries);
+			$scope.dailyTotal = getDailyTotal($scope.foodEntries);
+			// alert($scope.foodEntryAggregate.breakfast.length);
+		});
+	};
+});
+
+
+
+
+
+
+
+
 /**
  * Aggregate foodEntry by meal types
  * @param {Array} array of FoodEntry to aggregate by meal types

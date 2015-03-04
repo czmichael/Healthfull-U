@@ -9,6 +9,6 @@ import com.healthfullu.data.model.User;
 
 public interface FatSecretService {
 	
-	public List<FoodEntry> getUserFoodEntriesByDate(User user, Date date);
+	public List<FoodEntry> getUserFoodEntriesByDate(User user, Integer dateInt);
 
 }

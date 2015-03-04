@@ -1,7 +1,11 @@
 #!/bin/bash
 
+
+
+set -e
 cd /Users/cz_michael/Google\ Drive/Work/workspace/HealthfullU2
-mvn clean install
+mvn clean 
+mvn install
 
 wait
 echo "mvn clean install ......... Done!"

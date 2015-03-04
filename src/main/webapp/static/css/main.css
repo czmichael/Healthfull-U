@@ -26,6 +26,10 @@ body {
 	padding: 1px 5px;
 }
 
+.food-entry-nutrition-fact div:last-child {
+	border: none;
+}
+
 .food-entry-nutrition-fact-heading {
 	font-weight: bold;
 	margin: 5px 10px 5px 5px;
@@ -62,6 +66,7 @@ body {
 .dail-view-left {
 	width: 600px;
 	float: left;
+	margin: 38px 0px 0px 0px;
 }
 .dail-view-right {
 	float: left;
@@ -79,4 +84,11 @@ body {
 	text-align: left;
 	padding: 10px;
 	border-bottom: 1px solid black;
+}
+.demo_link {
+	color: blue;
+}
+.demo_link:hover {
+	text-decoration: underline;
+	cursor: pointer;
 }

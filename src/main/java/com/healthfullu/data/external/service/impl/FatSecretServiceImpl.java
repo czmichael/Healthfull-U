@@ -36,11 +36,13 @@ public class FatSecretServiceImpl implements FatSecretService {
 	DataSourceService dataSourceService;
 	
 	@Override
-	public List<FoodEntry> getUserFoodEntriesByDate(User user, Date date) {
+	public List<FoodEntry> getUserFoodEntriesByDate(User user, Integer dateInt) {
+		
+//		dateInt = 16288;
 		
 		String url;
 		try {
-			url = genSigBaseString();
+			url = genSigBaseString(dateInt);
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
@@ -51,23 +53,15 @@ public class FatSecretServiceImpl implements FatSecretService {
         Client c = Client.create(cc);
         WebResource resource = c.resource(url);
 		String response = resource.get(String.class);
-		System.out.println(response);
+//System.out.println(response);
 		
 		
 		
-//		Type foodEntryListType = new TypeToken<ArrayList<FoodEntry>>() {}.getType();
-//		List<FoodEntry> foodEntryList = new Gson().fromJson(response2, foodEntryListType);
-//System.out.println(foodEntryList.size());		
-		
-		
-//		Type foodEntryListType = new TypeToken<ArrayList<FoodEntry>>() {}.getType();
 		FoodEntriesRoot foodEntriesRoot = new Gson().fromJson(response, FoodEntriesRoot.class);
-		
-//		FoodEntry foodEntry = new Gson().fromJson(response3, FoodEntry.class);
 		FoodEntries foodEntries = foodEntriesRoot.getFood_entries();
 		
 		
-System.out.println("food entry id: " + foodEntries.getFood_entry().size());	
+//System.out.println("food entry id: " + foodEntries.getFood_entry().size());	
 
 for (FoodEntry foodEntry: foodEntries.getFood_entry()) {
 	System.out.println(foodEntry.getFood_id() + "   " + foodEntry.getFood_entry_description());
@@ -79,7 +73,9 @@ for (FoodEntry foodEntry: foodEntries.getFood_entry()) {
 	
 	
 	
-	private String genSigBaseString() throws UnsupportedEncodingException, InvalidKeyException, SignatureException, NoSuchAlgorithmException {
+	private String genSigBaseString(Integer dateInt) throws UnsupportedEncodingException, InvalidKeyException, SignatureException, NoSuchAlgorithmException {
+		
+		
 		String consumerKey = "e3e6c77a91444eacbd978c9801808c9a";
 		String secretKey = "884e354877484b649c2ad210b4d150f9";
 		String oauthToken = "1ad4531fd75e426188ae2c679d680bd7";  //George
@@ -100,7 +96,7 @@ for (FoodEntry foodEntry: foodEntries.getFood_entry()) {
 		
 
 		StringBuilder params = new StringBuilder("");
-		params.append("date=16288&");
+		params.append("date=" + dateInt.toString() + "&");
 		params.append("format=json&");
 		params.append("method=food_entries.get&");
 		params.append("oauth_consumer_key=" + consumerKey + "&");

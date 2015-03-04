@@ -43,17 +43,19 @@
 
 	<div class="container">
 
-		<div class="starter-template">
-			<h2>Sunday - Feb 1, 2015</h2>
+		<div class="starter-template" ng-controller="FoodCtrl">
+			<div class="demo_link" ng-click="getFoodInfo('2014-08-10')">Sunday - Aug 10th, 2014</div>
+			<div class="demo_link" ng-click="getFoodInfo('2014-08-11')">Monday - Aug 11th, 2014</div>
+			<div class="demo_link" ng-click="getFoodInfo('2014-08-12')">Tuesday - Aug 12th, 2014</div>
+
+
+			<h2>{{foodEntryDate}}</h2>
 
 
 			<div class="dail-view-left">
 				<div class="daily-meals">
 					<div class="daily-view-header">Breakfast</div>
-					<div class="daily-view-entry" ng-repeat="foodEntry in foodEntryAggregate.breakfast">
-						<a ng-href="/food_entry_detail">{{foodEntry.food_entry_description}}</a>
-
-					</div>
+					<div class="daily-view-entry" ng-repeat="foodEntry in foodEntryAggregate.breakfast">{{foodEntry.food_entry_description}}</div>
 				</div>
 
 				<div class="daily-meals">
@@ -73,8 +75,7 @@
 			</div>
 
 			<div class="dail-view-right">
-
-				<h4>Nutrition Summary of Today</h4>
+				<h5>Nutrition Summary of {{foodEntryDate}}</h5>
 				<div class="food-entry-nutrition-fact">
 					
 					<div class="food-entry-nutrition-fact-gray"><span class="food-entry-nutrition-fact-heading">Calories</span>{{dailyTotal.calories}}</span></div>
