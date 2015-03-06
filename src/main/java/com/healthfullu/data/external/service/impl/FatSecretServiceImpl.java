@@ -17,6 +17,7 @@ import java.lang.reflect.Type;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.healthfullu.data.external.service.FatSecretService;
+import com.healthfullu.data.model.DataSource;
 import com.healthfullu.data.model.FoodEntries;
 import com.healthfullu.data.model.FoodEntriesRoot;
 import com.healthfullu.data.model.FoodEntry;
@@ -36,13 +37,13 @@ public class FatSecretServiceImpl implements FatSecretService {
 	DataSourceService dataSourceService;
 	
 	@Override
-	public List<FoodEntry> getUserFoodEntriesByDate(User user, Integer dateInt) {
+	public List<FoodEntry> getUserFoodEntriesByDate(DataSource dataSource, Integer dateInt) {
 		
 //		dateInt = 16288;
 		
 		String url;
 		try {
-			url = genSigBaseString(dateInt);
+			url = genSigBaseString(dataSource, dateInt);
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
@@ -73,13 +74,22 @@ for (FoodEntry foodEntry: foodEntries.getFood_entry()) {
 	
 	
 	
-	private String genSigBaseString(Integer dateInt) throws UnsupportedEncodingException, InvalidKeyException, SignatureException, NoSuchAlgorithmException {
+	private String genSigBaseString(DataSource dataSource, Integer dateInt) throws UnsupportedEncodingException, InvalidKeyException, SignatureException, NoSuchAlgorithmException {
 		
 		
 		String consumerKey = "e3e6c77a91444eacbd978c9801808c9a";
 		String secretKey = "884e354877484b649c2ad210b4d150f9";
-		String oauthToken = "1ad4531fd75e426188ae2c679d680bd7";  //George
-		String oauthTokenSecret = "1a9bfded5cad4bc68f6e019d79bd646d";
+		
+		
+//		String oauthToken = "1ad4531fd75e426188ae2c679d680bd7";  //George
+//		String oauthTokenSecret = "1a9bfded5cad4bc68f6e019d79bd646d";
+		
+		
+		
+		String oauthToken = dataSource.getOauthToken();
+		String oauthTokenSecret = dataSource.getOauthTokenSecret();
+		
+		
 		
 		StringBuilder sigBaseString = new StringBuilder("");
 		String httpMethod = URLEncoder.encode("GET", "UTF-8");

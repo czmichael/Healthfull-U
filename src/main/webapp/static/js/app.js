@@ -165,3 +165,19 @@ function getDailyTotal(foodEntries) {
 
 	return foodEntryTotal;
 }
+
+
+
+$(function() {
+    $('#compose-button').on('click', function(e) {
+        $('#compose-form').show();
+    });
+
+	$('#compose-cancel').on('click', function(e) {
+        $('#compose-form').hide();
+    });
+
+});
+
+
+

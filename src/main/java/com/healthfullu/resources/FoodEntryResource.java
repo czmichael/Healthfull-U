@@ -1,6 +1,5 @@
 package com.healthfullu.resources;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.GET;
@@ -11,17 +10,15 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.UriInfo;
 
-import org.joda.time.DateTime;
-import org.joda.time.Days;
-import org.joda.time.MutableDateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.healthfullu.data.external.service.FatSecretService;
+import com.healthfullu.data.model.DataSource;
 import com.healthfullu.data.model.FoodEntry;
 import com.healthfullu.data.model.User;
-import com.healthfullu.services.UserService;
+import com.healthfullu.services.DataSourceService;
 import com.healthfullu.util.TimeUtil;
 
 
@@ -36,7 +33,12 @@ public class FoodEntryResource {
 	@Qualifier(value = "fatSecretService")
 	private FatSecretService fatSecretService;
 	
-
+	@Autowired
+	@Qualifier(value = "dataSourceService")
+	private DataSourceService dataSourceService;
+	
+	
+	
 	/**
 	 * 
 	 */
@@ -50,11 +52,16 @@ public class FoodEntryResource {
 		final String dateString = queryParams.getFirst("date");
 		final String userString = queryParams.getFirst("user");
 		
-
-//		Integer dateInt = 16288;
+		
 		Integer dateInt = TimeUtil.getDaysSinceUnixEpoch(dateString);
 
-		return fatSecretService.getUserFoodEntriesByDate(null, dateInt);
+		
+		User user = new User();
+		user.setId(1);
+		DataSource dataSource = dataSourceService.getDataSourceByUser(user);
+		
+		
+		return fatSecretService.getUserFoodEntriesByDate(dataSource, dateInt);
 	}
 	
 	
