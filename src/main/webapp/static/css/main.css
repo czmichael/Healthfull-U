@@ -112,7 +112,7 @@ body {
 	cursor: pointer;
 }
 .compose-text-area {
-margin: 10px 0px;
+	margin: 0px 0px 0px 0px;
 }
 #compose-button {
 	

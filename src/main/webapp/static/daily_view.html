@@ -106,20 +106,20 @@
 
 
 			
-			<div class="compose-section">
+			<div class="compose-section" ng-controller="EmailCtrl">
 				<div>
 					<button type="button" id="compose-button" class="btn btn-primary">Compose</button>
 				</div>
 				
-				
+			
 
-				
-
-				<div id="compose-form">
-					<div id="compose-cancel" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></div>
-					<textarea class="form-control compose-text-area" rows="10"></textarea>
-					<button id="compose-send" type="button" class="btn btn-primary">Send</button>
-				</div>
+				<form id="compose-form">
+					<div id="compose-cancel" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></div>		
+    				<input type="text" class="form-control" placeholder="to " ng-model="email.to">
+    				<input type="text" class="form-control" placeholder="subject " ng-model="email.subject">
+  					<textarea class="form-control compose-text-area" rows="10" ng-model="email.body"></textarea>
+					<button id="compose-send" type="button" class="btn btn-primary" ng-click="sendEmail()">Send</button>
+				</form>
 				
 			</div>
 			

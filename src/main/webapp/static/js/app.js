@@ -31,6 +31,7 @@ healthfullUApp.config(['$routeProvider',
 
 var userUrl = 'http://localhost:8080/rest/json/user/get';
 var foodEntryUrl = 'http://localhost:8080/rest/json/food_entry/get'
+var emailCreateUrl = 'http://localhost:8080/rest/json/email/create'
 
 healthfullUApp.controller('UserCtrl', function($scope, $http) {
 
@@ -67,6 +68,31 @@ healthfullUApp.controller('FoodCtrl', function($scope, $http) {
 	};
 });
 
+
+
+
+
+healthfullUApp.controller('EmailCtrl', function($scope, $http) {
+
+	$scope.email = {
+		to: '',
+		subject: '',
+		body: ''
+	};
+
+	$scope.sendEmail = function () {
+
+//		alert($scope.email.body);
+
+		$http.post(emailCreateUrl, $scope.email).
+	  		success(function(data, status, headers, config) {
+	  			alert("success, data: " + data + " status: " + status);
+	  		}).
+	  		error(function(data, status, headers, config) {
+	    		alert("fail, data: " + data + "  status: " + status);
+	  		});
+	};
+});
 
 
 
@@ -171,6 +197,7 @@ function getDailyTotal(foodEntries) {
 $(function() {
     $('#compose-button').on('click', function(e) {
         $('#compose-form').show();
+        $("html, body").animate({ scrollTop: $(document).height() });
     });
 
 	$('#compose-cancel').on('click', function(e) {
