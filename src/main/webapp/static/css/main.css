@@ -94,19 +94,19 @@ body {
 	cursor: pointer;
 }
 .compose-section {
-	
-	margin: 0px;
+	background-color: #CCCCCC;
+	border-radius: 4px;
+	margin: 20px;
 	clear: both;
 	width: 600px;	
 	float: right;
 }
 #compose-form {
-	display: none;
-	
+	padding: 15px;
 }
 #compose-cancel {
 	float: right;
-	margin: 5px 10px 5px 0px;
+	margin: 5px 10px 15px 0px;
 }
 #compose-cancel:hover {
 	cursor: pointer;
@@ -121,7 +121,7 @@ body {
 
 }
 #compose-send {
-	float: left;
+	/*float: left;*/
 	margin: 5px 10px 10px 5px;
 
 }

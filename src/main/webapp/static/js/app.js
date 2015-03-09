@@ -82,6 +82,9 @@ healthfullUApp.controller('EmailCtrl', function($scope, $http) {
 
 	$scope.sendEmail = function () {
 
+    
+
+
 //		alert($scope.email.body);
 
 		$http.post(emailCreateUrl, $scope.email).
@@ -196,6 +199,9 @@ function getDailyTotal(foodEntries) {
 
 $(function() {
     $('#compose-button').on('click', function(e) {
+
+
+
         $('#compose-form').show();
         $("html, body").animate({ scrollTop: $(document).height() });
     });
@@ -205,6 +211,9 @@ $(function() {
     });
 
 });
+
+
+
 
 
 

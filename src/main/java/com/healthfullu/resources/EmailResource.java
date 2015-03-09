@@ -24,6 +24,7 @@ import com.healthfullu.data.model.Email;
 import com.healthfullu.data.model.FoodEntry;
 import com.healthfullu.data.model.User;
 import com.healthfullu.services.DataSourceService;
+import com.healthfullu.services.EmailService;
 import com.healthfullu.util.TimeUtil;
 
 
@@ -34,10 +35,9 @@ import com.healthfullu.util.TimeUtil;
 @Path("/json/email")
 public class EmailResource {
 	
-//	@Autowired
-//	@Qualifier(value = "emailService")
-//	private EmailService emailService;
-//	
+	@Autowired
+	private EmailService emailService;
+
 	
 	
 	

@@ -13,6 +13,35 @@
 	
 	<div ng-view></div>
 
+
+
+
+ <div>
+    <button type="button" id="compose-button" class="my_popup_open btn btn-primary">Compose</button>
+  </div>
+  
+  <!-- Add content to the popup -->
+  <div id="my_popup">
+
+      <div class="compose-section" ng-controller="EmailCtrl">
+        <form id="compose-form">
+          <div id="compose-cancel" class="my_popup_close glyphicon glyphicon-remove-circle" aria-hidden="true"></div>    
+          <input type="text" class="form-control" placeholder="to " ng-model="email.to">
+          <input type="text" class="form-control" placeholder="subject " ng-model="email.subject">
+          <textarea class="form-control compose-text-area" rows="10" ng-model="email.body"></textarea>
+          <button id="compose-send" type="button" class="btn btn-primary" ng-click="sendEmail()">Send</button>
+        </form>
+      </div>
+
+  </div>
+
+  
+
+
+
+
+
+
 	<!-- Bootstrap core JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
@@ -24,6 +53,36 @@
     <script src="/static/js/angular/angular.js"></script>
     <script src="/static/js/angular/angular-route.js"></script>
     <script src="/static/js/app.js"></script>
+    <script src="/static/js/jquery/jquery.popupoverlay.js"></script>
+
+
+
+
+<script>
+    $(document).ready(function() {
+
+        // Initialize the plugin
+        $('#my_popup').popup({
+            
+            backgroundactive: true,
+            blur: false,
+            // vertical: 'bottom',
+            // horizontal: 'left',
+            onopen: function() {
+                // this.css("position","absolute");
+                // this.css("bottom", "20%");
+                // this.css("right", "0%");
+             
+                this.draggable();
+                // return this;
+
+            }
+            
+        });
+
+    });
+  </script>
+
 
 
 </body>

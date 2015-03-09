@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Site Title</title>
+</head>
+<body>
+
+  <!-- Add an optional button to open the popup -->
+  <button class="my_popup_open">Open popup</button>
+
+  <!-- Add content to the popup -->
+  <div id="my_popup" style="width: 300px; height: 300px; background-color: #CCCCCC;">
+
+    ...popup content...
+
+    <!-- Add an optional button to close the popup -->
+    <button class="my_popup_close">Close</button>
+
+  </div>
+
+  <!-- Include jQuery -->
+  <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+  <!-- Include jQuery Popup Overlay -->
+  <script src="http://vast-engineering.github.io/jquery-popup-overlay/jquery.popupoverlay.js"></script>
+
+  <script>
+    $(document).ready(function() {
+
+       // Initialize the plugin
+        $('#my_popup').popup({
+            
+            backgroundactive: true,
+            vertical: 'bottom',
+            horizontal: 'right',
+
+            
+        });
+
+    });
+  </script>
+
+</body>
+</html>
