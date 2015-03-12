@@ -1,106 +1,16 @@
-'use strict';
-
-
-var healthfullUApp = angular.module('healthfullUApp', [
-	'ngRoute'
-]);
-
-
-
-healthfullUApp.config(['$routeProvider',
-	function($routeProvider) {
-    	$routeProvider.
-      		when('/home', {
-        		templateUrl: 'daily_view.html',
-        		controller: 'UserCtrl'
-      		}).
-      		when('/food_entry_detail', {
-        		templateUrl: 'food_entry_detail.html',
-        		controller: 'UserCtrl'
-      		}).
-      		otherwise({
-        		redirectTo: '/home'
-      		});
-  }
-]);
-
-
-
-
-
-
-var userUrl = 'http://localhost:8080/rest/json/user/get';
-var foodEntryUrl = 'http://localhost:8080/rest/json/food_entry/get'
-var emailCreateUrl = 'http://localhost:8080/rest/json/email/create'
-
-healthfullUApp.controller('UserCtrl', function($scope, $http) {
-
-	$http.get(userUrl).success(function(data) {
-		$scope.users = data;
-	});
-
-
-	$http.get(foodEntryUrl).success(function(data) {
-		$scope.foodEntries = data;
-		$scope.foodEntryAggregate = aggregateByMealType($scope.foodEntries);
-		$scope.dailyTotal = getDailyTotal($scope.foodEntries);
-		// alert($scope.foodEntryAggregate.breakfast.length);
-		
-	});
-});
-
-
-
 healthfullUApp.controller('FoodCtrl', function($scope, $http) {
 
 	$scope.getFoodInfo = function (date) {
 		var requestURL = foodEntryUrl + '?date=' + date;
 		$scope.foodEntryDate = date;
-		// alert(requestURL);
 
 		$http.get(requestURL).success(function(data) {
-		
 			$scope.foodEntries = data;
 			$scope.foodEntryAggregate = aggregateByMealType($scope.foodEntries);
 			$scope.dailyTotal = getDailyTotal($scope.foodEntries);
-			// alert($scope.foodEntryAggregate.breakfast.length);
 		});
 	};
 });
-
-
-
-
-
-healthfullUApp.controller('EmailCtrl', function($scope, $http) {
-
-	$scope.email = {
-		to: '',
-		subject: '',
-		body: ''
-	};
-
-	$scope.sendEmail = function () {
-
-    
-
-
-//		alert($scope.email.body);
-
-		$http.post(emailCreateUrl, $scope.email).
-	  		success(function(data, status, headers, config) {
-	  			alert("success, data: " + data + " status: " + status);
-	  		}).
-	  		error(function(data, status, headers, config) {
-	    		alert("fail, data: " + data + "  status: " + status);
-	  		});
-	};
-});
-
-
-
-
-
 
 
 /**
@@ -135,12 +45,6 @@ function aggregateByMealType(foodEntries) {
 	}
 	return foodEntryAggregate;
 }
-
-
-
-
-
-
 
 
 /**
@@ -194,26 +98,3 @@ function getDailyTotal(foodEntries) {
 
 	return foodEntryTotal;
 }
-
-
-
-$(function() {
-    $('#compose-button').on('click', function(e) {
-
-
-
-        $('#compose-form').show();
-        $("html, body").animate({ scrollTop: $(document).height() });
-    });
-
-	$('#compose-cancel').on('click', function(e) {
-        $('#compose-form').hide();
-    });
-
-});
-
-
-
-
-
-

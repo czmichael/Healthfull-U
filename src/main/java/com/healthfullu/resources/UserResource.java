@@ -39,8 +39,6 @@ public class UserResource {
 		final List<User> result = new ArrayList<User>();
 		User  user = userService.getUserById(1);
 		result.add(user);
-		User  user2 = userService.getUserById(2);
-		result.add(user2);
 		
 		
 		return result;

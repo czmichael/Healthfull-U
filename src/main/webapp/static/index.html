@@ -9,81 +9,80 @@
 <link rel="stylesheet" href="/static/css/bootstrap-responsive.css" />
 </head>
 
-<body ng-controller="UserCtrl">
+<body>
+	<div>
 	
-	<div ng-view></div>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed"
+						data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+						aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Healthfull U</a>
+				</div>
+
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#home">Daily View</a></li>
+						<li><a href="#food_entry_detail">Food Detail</a></li>
+					</ul>
+				</div>
+				<!--/.nav-collapse -->
+			</div>
+		</nav>
+
+		<div class="container">
+			<div ng-view></div>
+		</div>
+	</div>
 
 
 
+	<div>
+		<button type="button" id="compose-button"
+			class="my_popup_open btn btn-primary">Compose</button>
+	</div>
 
- <div>
-    <button type="button" id="compose-button" class="my_popup_open btn btn-primary">Compose</button>
-  </div>
-  
-  <!-- Add content to the popup -->
-  <div id="my_popup">
+	<!-- Add content to the popup -->
+	<div id="my_popup">
 
-      <div class="compose-section" ng-controller="EmailCtrl">
-        <form id="compose-form">
-          <div id="compose-cancel" class="my_popup_close glyphicon glyphicon-remove-circle" aria-hidden="true"></div>    
-          <input type="text" class="form-control" placeholder="to " ng-model="email.to">
-          <input type="text" class="form-control" placeholder="subject " ng-model="email.subject">
-          <textarea class="form-control compose-text-area" rows="10" ng-model="email.body"></textarea>
-          <button id="compose-send" type="button" class="btn btn-primary" ng-click="sendEmail()">Send</button>
-        </form>
-      </div>
-
-  </div>
-
-  
-
+		<div class="compose-section" ng-controller="EmailCtrl">
+			<form id="compose-form">
+				<div id="compose-cancel"
+					class="my_popup_close glyphicon glyphicon-remove-circle"
+					aria-hidden="true"></div>
+				<input type="text" class="form-control" placeholder="to "
+					ng-model="email.to"> <input type="text"
+					class="form-control" placeholder="subject "
+					ng-model="email.subject">
+				<textarea class="form-control compose-text-area" rows="10"
+					ng-model="email.body"></textarea>
+				<button id="compose-send" type="button" class="btn btn-primary"
+					ng-click="sendEmail()">Send</button>
+			</form>
+		</div>
+	</div>
 
 
-
-
-
-	<!-- Bootstrap core JavaScript
+	<!-- core JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 
-
 	<script src="/static/js/bootstrap/bootstrap.js"></script>
-    <script src="/static/js/jquery/jquery-1.10.2.js"></script>
-    <script src="/static/js/jquery/jquery-ui-1.10.4.js"></script>
-    <script src="/static/js/angular/angular.js"></script>
-    <script src="/static/js/angular/angular-route.js"></script>
-    <script src="/static/js/app.js"></script>
-    <script src="/static/js/jquery/jquery.popupoverlay.js"></script>
-
-
-
-
-<script>
-    $(document).ready(function() {
-
-        // Initialize the plugin
-        $('#my_popup').popup({
-            
-            backgroundactive: true,
-            blur: false,
-            // vertical: 'bottom',
-            // horizontal: 'left',
-            onopen: function() {
-                // this.css("position","absolute");
-                // this.css("bottom", "20%");
-                // this.css("right", "0%");
-             
-                this.draggable();
-                // return this;
-
-            }
-            
-        });
-
-    });
-  </script>
-
-
+	<script src="/static/js/jquery/jquery-1.10.2.js"></script>
+	<script src="/static/js/jquery/jquery-ui-1.10.4.js"></script>
+	<script src="/static/js/jquery/jquery.popupoverlay.js"></script>
+	<script src="/static/js/angular/angular.js"></script>
+	<script src="/static/js/angular/angular-route.js"></script>
+	<script src="/static/js/healthfull_u/app.js"></script>
+	<script src="/static/js/healthfull_u/hu-main.js"></script>
+	<script src="/static/js/healthfull_u/controllers/foodController.js"></script>
+	<script src="/static/js/healthfull_u/controllers/emailController.js"></script>
+	<script src="/static/js/healthfull_u/controllers/userController.js"></script>
 
 </body>
 </html>
