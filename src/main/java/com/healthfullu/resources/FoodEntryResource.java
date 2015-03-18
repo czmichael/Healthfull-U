@@ -46,7 +46,6 @@ public class FoodEntryResource {
 	@Path("/get")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<FoodEntry> getUserInJson(@Context final UriInfo uriInfo) {
-		
 		final MultivaluedMap<String, String> queryParams = uriInfo
 				.getQueryParameters();
 		final String dateString = queryParams.getFirst("date");
@@ -54,12 +53,10 @@ public class FoodEntryResource {
 		
 		
 		Integer dateInt = TimeUtil.getDaysSinceUnixEpoch(dateString);
-
 		
 		User user = new User();
 		user.setId(1);
 		DataSource dataSource = dataSourceService.getDataSourceByUser(user);
-		
 		
 		return fatSecretService.getUserFoodEntriesByDate(dataSource, dateInt);
 	}

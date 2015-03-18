@@ -30,11 +30,11 @@ public class EmailServiceImplTest {
 	
 	@Test
 	public void testSendEmail() {
-		Email email = new Email();
-		email.setFrom("cz_michael@hotmail.com");
-		email.setTo("cz.michael@gmail.com");
-		email.setSubject("healthfull U test 6");
-		email.setBody("hello, world");
-		emailService.sendEmail(email);
+//		Email email = new Email();
+//		email.setFrom("cz_michael@hotmail.com");
+//		email.setTo("cz.michael@gmail.com");
+//		email.setSubject("healthfull U test 10");
+//		email.setBody("hello, world");
+//		emailService.sendEmail(email);
 	}
 }

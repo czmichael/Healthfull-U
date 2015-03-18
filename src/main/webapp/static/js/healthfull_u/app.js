@@ -21,7 +21,8 @@ healthfullUApp.config(['$routeProvider',
   }
 ]);
 
-var baseUrl = 'http://localhost:8080';
+//var baseUrl = 'http://localhost:8080';
+var baseUrl = 'http://healthfull-u.appspot.com';
 
 
 var userUrl = baseUrl + '/rest/json/user/get';

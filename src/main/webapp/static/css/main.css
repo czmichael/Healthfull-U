@@ -125,3 +125,10 @@ body {
 	margin: 5px 10px 10px 5px;
 
 }
+.form input.ng-invalid.ng-touched {
+	background-color: #FA787E;
+}
+.form-error {
+	color: red;
+}
+

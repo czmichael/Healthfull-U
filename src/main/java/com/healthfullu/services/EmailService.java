@@ -4,7 +4,6 @@ import com.healthfullu.data.model.Email;
 import com.healthfullu.data.model.User;
 
 
-
 /**
  * Email related services.
  */

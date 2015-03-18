@@ -10,6 +10,8 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,8 @@ import com.healthfullu.services.PropertyService;
 @Service("emailService")
 public class EmailServiceImpl implements EmailService {
 
+	private Logger logger = LoggerFactory.getLogger(EmailServiceImpl.class);
+	
 	@Autowired
 	private PropertyService propertyService;
 
@@ -52,12 +56,9 @@ public class EmailServiceImpl implements EmailService {
 
 	private void sendOff(InternetAddress addressFrom,
 			InternetAddress[] addressTo, String subject, String message) {
-		Properties props = System.getProperties();
-		props.put("mail.smtp.host",
-				propertyService.getProperty(PropertyService.EMAIL_SERVER_IP));
-		props.put("mail.smtp.starttls.enable", "true");
+		
+		Properties props = new Properties();
 		Session session = Session.getDefaultInstance(props, null);
-		session.setDebug(false);
 
 		try {
 			MimeMessage msg = new MimeMessage(session);
@@ -69,8 +70,9 @@ public class EmailServiceImpl implements EmailService {
 
 			// Send the message
 			Transport.send(msg);
-		} catch (MessagingException me) {
-			throw new RuntimeException(me);
+		} catch (Exception e) {
+			logger.error("Error email info:\n email from: " + addressFrom + "\n email to: " + addressTo);
+			throw new RuntimeException(e);
 		}
 	}
 }
