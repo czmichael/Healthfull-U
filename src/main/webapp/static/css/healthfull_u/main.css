@@ -115,10 +115,9 @@ body {
 	margin: 0px 0px 0px 0px;
 }
 #compose-button {
-	
+	display: none;
 	margin: 5px 10px 10px 5px;
 	clear: both;
-
 }
 #compose-send {
 	/*float: left;*/
@@ -131,4 +130,6 @@ body {
 .form-error {
 	color: red;
 }
-
+#my_popup {
+	display: none;
+}

@@ -4,24 +4,24 @@
 <meta charset="utf-8">
 <title>Healthfull U</title>
 
-<link rel="stylesheet" href="/static/css/bootstrap.css" />
-<link rel="stylesheet" href="/static/css/main.css" />
-<link rel="stylesheet" href="/static/css/bootstrap-responsive.css" />
-<link rel="stylesheet" href="/static/css/angular-busy.min.css" />
+<link rel="stylesheet" href="/static/css/bootstrap/bootstrap.css" />
+<link rel="stylesheet" href="/static/css/bootstrap/bootstrap-responsive.css" />
+<link rel="stylesheet" href="/static/css/angular/angular-busy.min.css" />
+<link rel="stylesheet" href="/static/css/healthfull_u/main.css" />
 </head>
 
 <body>
 	<div>
-	
+
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed"
-						data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-						aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+						aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand" href="#">Healthfull U</a>
 				</div>
@@ -44,23 +44,21 @@
 
 
 	<div>
-		<button type="button" id="compose-button"
-			class="my_popup_open btn btn-primary">Compose</button>
+		<button type="button" id="compose-button" class="my_popup_open btn btn-primary">Compose</button>
 	</div>
 
 	<!-- Add content to the popup -->
 	<div id="my_popup">
-
 		<div class="compose-section" ng-controller="EmailCtrl">
 			<form name="composeForm" class="form" id="compose-form" novalidate>
 				<div id="compose-cancel" class="my_popup_close glyphicon glyphicon-remove-circle" aria-hidden="true"></div>
-				
-				<input type="email" required="" name="emailTo" class="form-control" placeholder="to " ng-model="email.to"> 
-				
+
+				<input type="email" required="" name="emailTo" class="form-control" placeholder="to " ng-model="email.to">
+
 				<div ng-show="composeForm.$submitted || composeForm.emailTo.$touched">
-      				<span class="form-error" ng-show="composeForm.emailTo.$error.required">Missing email recipient</span>
-      				<span class="form-error" ng-show="composeForm.emailTo.$error.email">This is not a valid email.</span>
-    			</div>
+					<span class="form-error" ng-show="composeForm.emailTo.$error.required">Missing email recipient</span>
+					<span class="form-error" ng-show="composeForm.emailTo.$error.email">This is not a valid email.</span>
+				</div>
 
 
 

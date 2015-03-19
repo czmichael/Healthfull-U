@@ -1,12 +1,9 @@
 
 <div class="starter-template" ng-controller="FoodCtrl" cg-busy="myPromise">
-	
-	<div class="demo_link" ng-click="getFoodInfo('2014-08-10')">Sunday
-		- Aug 10th, 2014</div>
-	<div class="demo_link" ng-click="getFoodInfo('2014-08-11')">Monday
-		- Aug 11th, 2014</div>
-	<div class="demo_link" ng-click="getFoodInfo('2014-08-12')">Tuesday
-		- Aug 12th, 2014</div>
+
+	<div class="demo_link" ng-click="getFoodInfo('2014-08-10')">Sunday - Aug 10th, 2014</div>
+	<div class="demo_link" ng-click="getFoodInfo('2014-08-11')">Monday - Aug 11th, 2014</div>
+	<div class="demo_link" ng-click="getFoodInfo('2014-08-12')">Tuesday - Aug 12th, 2014</div>
 
 
 	<h2>{{foodEntryDate}}</h2>
@@ -16,26 +13,22 @@
 
 		<div class="daily-meals">
 			<div class="daily-view-header">Breakfast</div>
-			<div class="daily-view-entry"
-				ng-repeat="foodEntry in foodEntryAggregate.breakfast">{{foodEntry.food_entry_description}}</div>
+			<div class="daily-view-entry" ng-repeat="foodEntry in foodEntryAggregate.breakfast">{{foodEntry.food_entry_description}}</div>
 		</div>
 
 		<div class="daily-meals">
 			<div class="daily-view-header">Lunch</div>
-			<div class="daily-view-entry"
-				ng-repeat="foodEntry in foodEntryAggregate.lunch">{{foodEntry.food_entry_description}}</div>
+			<div class="daily-view-entry" ng-repeat="foodEntry in foodEntryAggregate.lunch">{{foodEntry.food_entry_description}}</div>
 		</div>
 
 		<div class="daily-meals">
 			<div class="daily-view-header">Dinner</div>
-			<div class="daily-view-entry"
-				ng-repeat="foodEntry in foodEntryAggregate.dinner">{{foodEntry.food_entry_description}}</div>
+			<div class="daily-view-entry" ng-repeat="foodEntry in foodEntryAggregate.dinner">{{foodEntry.food_entry_description}}</div>
 		</div>
 
 		<div class="daily-meals">
 			<div class="daily-view-header">Other</div>
-			<div class="daily-view-entry"
-				ng-repeat="foodEntry in foodEntryAggregate.other">{{foodEntry.food_entry_description}}</div>
+			<div class="daily-view-entry" ng-repeat="foodEntry in foodEntryAggregate.other">{{foodEntry.food_entry_description}}</div>
 		</div>
 	</div>
 
@@ -44,66 +37,78 @@
 		<div class="food-entry-nutrition-fact">
 
 			<div class="food-entry-nutrition-fact-gray">
-				<span class="food-entry-nutrition-fact-heading">Calories</span>{{dailyTotal.calories}}</span>
+				<span class="food-entry-nutrition-fact-heading">Calories</span>
+				{{dailyTotal.calories}}
+				</span>
 			</div>
 
 			<div class="food-entry-nutrition-fact-yellow">
-				<span class="food-entry-nutrition-fact-heading">Total Fat</span><span>{{dailyTotal.fat}}g</span>
+				<span class="food-entry-nutrition-fact-heading">Total Fat</span>
+				<span>{{dailyTotal.fat}}g</span>
 			</div>
 			<div class="food-entry-nutrition-fact-yellow">
-				<span class="food-entry-nutrition-fact-sub2-heading">Saturated
-					Fat</span><span>{{dailyTotal.saturated_fat}}g</span>
+				<span class="food-entry-nutrition-fact-sub2-heading">Saturated Fat</span>
+				<span>{{dailyTotal.saturated_fat}}g</span>
 			</div>
 			<div class="food-entry-nutrition-fact-yellow">
-				<span class="food-entry-nutrition-fact-sub2-heading">Trans
-					Fat</span><span>{{dailyTotal.trans_fat}}g</span>
+				<span class="food-entry-nutrition-fact-sub2-heading">Trans Fat</span>
+				<span>{{dailyTotal.trans_fat}}g</span>
 			</div>
 			<div class="food-entry-nutrition-fact-yellow">
-				<span class="food-entry-nutrition-fact-sub2-heading">Polyunsaturated
-					Fat</span><span>{{dailyTotal.polyunsaturated_fat}}g</span>
+				<span class="food-entry-nutrition-fact-sub2-heading">Polyunsaturated Fat</span>
+				<span>{{dailyTotal.polyunsaturated_fat}}g</span>
 			</div>
 			<div class="food-entry-nutrition-fact-yellow">
-				<span class="food-entry-nutrition-fact-sub2-heading">Monounsaturated
-					Fat</span><span>{{dailyTotal.monounsaturated_fat}}g</span>
+				<span class="food-entry-nutrition-fact-sub2-heading">Monounsaturated Fat</span>
+				<span>{{dailyTotal.monounsaturated_fat}}g</span>
 			</div>
 
 
 			<div>
-				<span class="food-entry-nutrition-fact-heading">Cholesterol</span><span>{{dailyTotal.cholesterol}}mg</span>
+				<span class="food-entry-nutrition-fact-heading">Cholesterol</span>
+				<span>{{dailyTotal.cholesterol}}mg</span>
 			</div>
 			<div>
-				<span class="food-entry-nutrition-fact-heading">Sodium</span><span>{{dailyTotal.sodium}}mg</span>
+				<span class="food-entry-nutrition-fact-heading">Sodium</span>
+				<span>{{dailyTotal.sodium}}mg</span>
 			</div>
 
 			<div>
-				<span class="food-entry-nutrition-fact-heading">Total
-					Carbohydrate</span><span>{{dailyTotal.carbohydrates}}g</span>
+				<span class="food-entry-nutrition-fact-heading">Total Carbohydrate</span>
+				<span>{{dailyTotal.carbohydrates}}g</span>
 			</div>
 			<div>
-				<span class="food-entry-nutrition-fact-sub2-heading">Dietary
-					Fiber</span><span>{{dailyTotal.fiber}}g</span>
+				<span class="food-entry-nutrition-fact-sub2-heading">Dietary Fiber</span>
+				<span>{{dailyTotal.fiber}}g</span>
 			</div>
 			<div>
-				<span class="food-entry-nutrition-fact-sub2-heading">Sugars</span><span>{{dailyTotal.sugar}}g</span>
+				<span class="food-entry-nutrition-fact-sub2-heading">Sugars</span>
+				<span>{{dailyTotal.sugar}}g</span>
 			</div>
 			<div>
-				<span class="food-entry-nutrition-fact-heading">Proteins</span><span>{{dailyTotal.protein}}g</span>
+				<span class="food-entry-nutrition-fact-heading">Proteins</span>
+				<span>{{dailyTotal.protein}}g</span>
 			</div>
 
 			<div class="food-entry-nutrition-fact-red">
-				<span class="food-entry-nutrition-fact-sub-heading">Vitamin A</span><span>{{dailyTotal.vitamin_a}}%</span>
+				<span class="food-entry-nutrition-fact-sub-heading">Vitamin A</span>
+				<span>{{dailyTotal.vitamin_a}}%</span>
 			</div>
 			<div class="food-entry-nutrition-fact-red">
-				<span class="food-entry-nutrition-fact-sub-heading">Vitamin C</span><span>{{dailyTotal.vitamin_c}}%</span>
+				<span class="food-entry-nutrition-fact-sub-heading">Vitamin C</span>
+				<span>{{dailyTotal.vitamin_c}}%</span>
 			</div>
 			<div class="food-entry-nutrition-fact-red">
-				<span class="food-entry-nutrition-fact-sub-heading">Calcium</span><span>{{dailyTotal.calcium}}%</span>
+				<span class="food-entry-nutrition-fact-sub-heading">Calcium</span>
+				<span>{{dailyTotal.calcium}}%</span>
 			</div>
 			<div class="food-entry-nutrition-fact-red">
-				<span class="food-entry-nutrition-fact-sub-heading">Iron</span><span>{{dailyTotal.iron}}%</span>
+				<span class="food-entry-nutrition-fact-sub-heading">Iron</span>
+				<span>{{dailyTotal.iron}}%</span>
 			</div>
 			<div class="food-entry-nutrition-fact-red">
-				<span class="food-entry-nutrition-fact-sub-heading">Potassium</span><span>{{dailyTotal.potassium}}mg</span>
+				<span class="food-entry-nutrition-fact-sub-heading">Potassium</span>
+				<span>{{dailyTotal.potassium}}mg</span>
 			</div>
 		</div>
 

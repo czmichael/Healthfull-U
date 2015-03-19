@@ -4,7 +4,6 @@ import java.io.UnsupportedEncodingException;
 import java.util.Properties;
 
 import javax.mail.Message;
-import javax.mail.MessagingException;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
@@ -19,6 +18,7 @@ import com.healthfullu.data.model.Email;
 import com.healthfullu.data.model.User;
 import com.healthfullu.services.EmailService;
 import com.healthfullu.services.PropertyService;
+
 
 @Service("emailService")
 public class EmailServiceImpl implements EmailService {

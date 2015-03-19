@@ -22,3 +22,7 @@ healthfullUApp.controller('EmailCtrl', function($scope, $http) {
 	};
 });
 
+
+jQuery(window).load(function () {
+	$('#compose-button').show();
+});
