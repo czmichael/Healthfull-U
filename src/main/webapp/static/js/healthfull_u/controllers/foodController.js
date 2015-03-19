@@ -3,7 +3,7 @@ healthfullUApp.controller('FoodCtrl', function($scope, $http) {
 	$scope.getFoodInfo = function (date) {
 		var requestURL = foodEntryUrl + '?date=' + date;
 		$scope.foodEntryDate = date;
-		$http.get(requestURL).success(function(data) {
+		$scope.myPromise = $http.get(requestURL).success(function(data) {
 			$scope.foodEntries = data;
 			$scope.foodEntryAggregate = aggregateByMealType($scope.foodEntries);
 			$scope.dailyTotal = getDailyTotal($scope.foodEntries);

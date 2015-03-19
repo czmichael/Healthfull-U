@@ -1,4 +1,6 @@
-<div class="starter-template" ng-controller="FoodCtrl">
+
+<div class="starter-template" ng-controller="FoodCtrl" cg-busy="myPromise">
+	
 	<div class="demo_link" ng-click="getFoodInfo('2014-08-10')">Sunday
 		- Aug 10th, 2014</div>
 	<div class="demo_link" ng-click="getFoodInfo('2014-08-11')">Monday
@@ -11,6 +13,7 @@
 
 
 	<div class="dail-view-left">
+
 		<div class="daily-meals">
 			<div class="daily-view-header">Breakfast</div>
 			<div class="daily-view-entry"

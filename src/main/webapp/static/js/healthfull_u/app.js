@@ -1,8 +1,9 @@
 'use strict';
 
 var healthfullUApp = angular.module('healthfullUApp', [
-	'ngRoute'
+	'ngRoute', 'cgBusy'
 ]);
+
 
 healthfullUApp.config(['$routeProvider',
 	function($routeProvider) {
