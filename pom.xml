@@ -10,6 +10,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<org.springframework.version>3.2.3.RELEASE</org.springframework.version>
+		<appengine.target.version>1.9.17a</appengine.target.version>
 	</properties>
 
 	<prerequisites>
@@ -165,17 +166,20 @@
 			<artifactId>joda-time</artifactId>
 			<version>2.7</version>
 		</dependency>
-		<dependency>
+<!-- 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
 			<version>1.4</version>
-		</dependency>
+		</dependency> -->
 
 
 
 		<!-- Google App Engine -->
-		<!-- <dependency> <groupId>com.google.appengine</groupId> <artifactId>appengine-api-1.0-sdk</artifactId> 
-			<version>1.3.1</version> </dependency> -->
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-1.0-sdk</artifactId>
+            <version>${appengine.target.version}</version>
+        </dependency>
 	</dependencies>
 
 

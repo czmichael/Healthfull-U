@@ -38,7 +38,7 @@ System.out.println("3. body: " + email.getBody());
 		
 
 		
-		email.setFrom("cz.michael@gmail.com");
+		email.setFrom("healthfull.u2@gmail.com");
 		email.setTo(email.getTo());
 		email.setSubject(email.getSubject());
 		email.setBody(email.getBody());
