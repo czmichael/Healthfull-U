@@ -1,4 +1,5 @@
-healthfullUApp.controller('EmailCtrl', function($scope, $http) {
+healthfullUApp.controller('EmailCtrl', 
+function($scope, $http) {
 
 	$scope.email = {
 		to: '',

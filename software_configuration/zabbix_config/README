@@ -1,2 +1,0 @@
-* "zabbix_agentd.conf" is used to configure zabbix agent, should be put under "/etc/zabbix".
-* "zabbix_server.conf" is used to configure zabbix server, should be put under "/etc/zabbix".

@@ -1,4 +1,5 @@
-healthfullUApp.controller('FoodCtrl', function($scope, $http) {
+healthfullUApp.controller('FoodCtrl', 
+function($scope, $http) {
 
 	$scope.getFoodInfo = function (date) {
 		var requestURL = foodEntryUrl + '?date=' + date;

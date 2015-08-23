@@ -1,6 +1,7 @@
-healthfullUApp.controller('UserCtrl', function($scope, $http) {
+healthfullUApp.controller('UserCtrl', 
+function($scope, $http) {
 
 	$http.get(userUrl).success(function(data) {
-		$scope.users = data;
+		$scope.user = data[0];
 	});
 });
