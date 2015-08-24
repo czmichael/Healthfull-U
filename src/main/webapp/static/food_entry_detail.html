@@ -1,9 +1,8 @@
+<ng-include src="'nav_bar.html'"></ng-include>
 <div ng-controller="UserCtrl">
 
-	
 	Hello, {{user.name}}
 	
-
 	<div class="food-entry-nutrition-fact" ng-repeat="foodEntry in foodEntries">
 		<div class="food-entry-nutrition-fact-green">{{foodEntry.meal}}</div>
 		<div class="food-entry-nutrition-fact-green">{{foodEntry.food_entry_description}}</div>

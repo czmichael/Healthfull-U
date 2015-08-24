@@ -1,0 +1,1 @@
+* change webapp/WEB-INF/applicationContext.xml - use the correct "dataSource"
