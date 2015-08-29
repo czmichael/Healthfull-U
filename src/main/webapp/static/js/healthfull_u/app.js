@@ -33,6 +33,7 @@ var baseUrl = 'http://localhost:8080';
 var userUrl = baseUrl + '/rest/json/user/get';
 var foodEntryUrl = baseUrl + '/rest/json/food_entry/get';
 var emailCreateUrl = baseUrl + '/rest/json/email/create';
+var loginUrl = baseUrl + '/rest/api/login';
 
 jQuery(window).load(function () {
   $('#compose-button').show();

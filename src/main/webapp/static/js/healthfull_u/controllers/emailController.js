@@ -11,11 +11,11 @@ function($scope, $http) {
 
 		
 		if ($scope.composeForm.$valid) {
-			$http.post(emailCreateUrl, $scope.email).
-		  		success(function(data, status, headers, config) {
+			$http.post(emailCreateUrl, $scope.email)
+				.success(function(data, status, headers, config) {
 		  			alert("success, data: " + data + " status: " + status);
-		  		}).
-		  		error(function(data, status, headers, config) {
+		  		})
+		  		.error(function(data, status, headers, config) {
 		    		alert("fail, data: " + data + "  status: " + status);
 		  		});		
 		}

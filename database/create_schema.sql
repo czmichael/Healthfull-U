@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS `healthfulu`.`user` (
   `email` VARCHAR(255) NULL,
   `password` VARCHAR(45) NULL,
   `name` VARCHAR(255) NULL,
+  `log_in` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 

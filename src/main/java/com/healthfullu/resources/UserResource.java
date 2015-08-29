@@ -6,10 +6,7 @@ import java.util.List;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.MultivaluedMap;
-import javax.ws.rs.core.UriInfo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -25,6 +22,7 @@ import com.healthfullu.services.UserService;
 @Component("userResource")
 @Path("/json/user")
 public class UserResource {
+	
 	@Autowired
 	@Qualifier(value = "userService")
 	private UserService userService;

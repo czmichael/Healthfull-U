@@ -10,9 +10,13 @@ public interface UserDao {
 	
 	public User getUserByUserId(int id);
 
+	public User getUserByLogin(String login);
+	
 	public boolean isUserExisted(String _fbEmail);
 
 	public void createUser(User user);
 
 	public void removeUserByUserId(int id);
+	
+	
 }

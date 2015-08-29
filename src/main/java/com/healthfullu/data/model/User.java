@@ -25,6 +25,10 @@ public class User {
 	@Column(name = "name")
 	private String name;
 	
+	@Column(name = "log_in")
+	private String login;
+	
+	
 
 	public int getId() {
 		return id;
@@ -56,5 +60,13 @@ public class User {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
 	}
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.healthfullu.dao.UserDao;
+import com.healthfullu.data.model.DataSource;
 import com.healthfullu.data.model.User;
 
 
@@ -25,18 +26,30 @@ public class UserDaoImpl implements UserDao {
 		this.em = entityManager;
 	}
 
+	@Override
 	public User getUserByUserId(int id) {
 		return em.find(User.class, id);
 	}
 	
+	@Override
+	public User getUserByLogin(String login) {
+		Query query = em
+				.createQuery("select user from User user where user.login=:login");
+		query.setParameter("login", login);
+		return (User) query.getSingleResult();
+	}
+	
+	@Override
 	public void createUser(User user) {
 		em.persist(user);
 	}
 
+	@Override
 	public void removeUserByUserId(int id) {
 		em.remove(getUserByUserId(id));
 	}
 
+	@Override
 	public boolean isUserExisted(String email) {
 		Query query = em
 				.createQuery("select count(usr) from User usr where usr.fbEmail=:fbEmail");

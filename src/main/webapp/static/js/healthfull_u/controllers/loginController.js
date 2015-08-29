@@ -1,32 +1,20 @@
 healthfullUApp.controller('LoginCtrl', 
-function($scope, $http) {
+function($scope, $http, $location) {
 
+	$scope.login = function() {
 
-
-	$scope.login = function (username, password) {
-
-		//alert("hi");
-		alert("username: " + $scope.username + "\n password: " + $scope.password);
-		
-	
-
-
-		var request = $http({
-        	method: "post",
-            url: "/api/authenticate",
-            data: {
-                username: username,
-                password: password
-            }
-        });
-
-		
-		request.success(
-	        function( html ) {
-	            $scope.cfdump = html;
-	        }
-	    );
-
+		$http.post(loginUrl, {username: $scope.username, password: $scope.password}).
+			then(function(response) {
+	    		sessionStorage.token = response.data.token;
+	    		
+	    		$location.path('/home')
+	  		}, function(response) {
+	    		// Erase the token if the user fails to log in
+				sessionStorage.removeItem("token");
+	    		// Handle login errors here
+	    		$scope.message = 'Error: Invalid user or password';
+	    		
+	  		});
 
 
 	};

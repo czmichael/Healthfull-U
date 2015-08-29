@@ -1,2 +1,2 @@
-insert into healthfulu.user values (null, 'cz.michael@gmail.com', '123456', 'Zhi Chen');
+insert into healthfulu.user values (null, 'cz.michael@gmail.com', '123456', 'Zhi Chen', 'zhi_chen');
 insert into healthfulu.data_source values (null, 1, 'fat_secret', '1ad4531fd75e426188ae2c679d680bd7', '1a9bfded5cad4bc68f6e019d79bd646d');

@@ -16,8 +16,13 @@ public class UserServiceImpl implements UserService {
 	@Qualifier("userDao")
 	private UserDao userDao;
 
+	@Override
 	public User getUserById(int id) {
 		return userDao.getUserByUserId(id);
 	}
 
+	@Override
+	public User getUserByLogin(String username) {
+		return userDao.getUserByLogin(username);
+	}
 }
