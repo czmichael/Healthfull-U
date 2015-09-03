@@ -1,6 +1,7 @@
 package com.healthfullu.dao.impl;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
@@ -8,7 +9,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.healthfullu.dao.UserDao;
-import com.healthfullu.data.model.DataSource;
 import com.healthfullu.data.model.User;
 
 
@@ -36,7 +36,13 @@ public class UserDaoImpl implements UserDao {
 		Query query = em
 				.createQuery("select user from User user where user.login=:login");
 		query.setParameter("login", login);
-		return (User) query.getSingleResult();
+		
+		try {
+			User user = (User) query.getSingleResult();	
+			return user;
+		} catch (NoResultException e) {
+			return null;
+		}
 	}
 	
 	@Override

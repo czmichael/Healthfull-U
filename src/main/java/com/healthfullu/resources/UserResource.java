@@ -34,6 +34,7 @@ public class UserResource {
 	@Path("/get")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<User> getUserInJson() {
+		// TODO: change the return type to Resource with response status
 		final List<User> result = new ArrayList<User>();
 		User  user = userService.getUserById(1);
 		result.add(user);

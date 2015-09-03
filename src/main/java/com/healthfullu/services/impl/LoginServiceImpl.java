@@ -37,7 +37,8 @@ public class LoginServiceImpl implements LoginService {
 	@Override
 	public boolean validateCredential(String username, String password) {
 		User user = userService.getUserByLogin(username);
-		return (user != null && user.getPassword() == password);
+		boolean isValid = (user != null && password.equals(user.getPassword())); 
+		return isValid;
 	}
 	
 	/*

@@ -46,6 +46,9 @@ public class FoodEntryResource {
 	@Path("/get")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<FoodEntry> getUserInJson(@Context final UriInfo uriInfo) {
+		
+		//TODO: change the return type to Resource with response status
+		
 		final MultivaluedMap<String, String> queryParams = uriInfo
 				.getQueryParameters();
 		final String dateString = queryParams.getFirst("date");

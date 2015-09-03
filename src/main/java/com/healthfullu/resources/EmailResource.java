@@ -29,14 +29,8 @@ public class EmailResource {
 	@Path("/create")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response create(Email email) {
-
-System.out.println("1. to: " + email.getTo());
-System.out.println("2. subject: " + email.getSubject());
-System.out.println("3. body: " + email.getBody());
 		
-		 // TODO: need to authenticate user (email_from), either using session, or some other technique
-		
-
+		// TODO: need to authenticate user (email_from), either using session, or some other technique
 		
 		email.setFrom("healthfull.u2@gmail.com");
 		email.setTo(email.getTo());
