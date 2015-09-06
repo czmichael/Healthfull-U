@@ -20,7 +20,7 @@ import com.healthfullu.services.LoginService;
  * The web resource for login
  */
 @Component("loginResource")
-@Path("/api")
+@Path("/api/login")
 public class LoginResource {
 	
 	@Autowired
@@ -31,7 +31,6 @@ public class LoginResource {
 	 * 
 	 */
 	@POST
-	@Path("/login")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response getUserInJson(LoginDTO login) {
