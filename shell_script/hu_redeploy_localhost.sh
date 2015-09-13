@@ -21,13 +21,13 @@ echo "tomcat shutdown ......... Done!"
 
 # remove older war
 rm -rf /usr/local/apache-tomcat-7.0.59/webapps/ROOT/*
-rm -rf /usr/local/apache-tomcat-7.0.59/webapps/HealthfullU2-0.0.1-SNAPSHOT
+rm -rf /usr/local/apache-tomcat-7.0.59/webapps/HealthfullU2-0.0.2-SNAPSHOT
 
 wait
 echo "removing old tomcat webapp files ......... Done!"
 
 
-rsync --progress /Users/cz_michael/Google\ Drive/Work/workspace/HealthfullU2/target/HealthfullU2-0.0.1-SNAPSHOT.war /usr/local/apache-tomcat-7.0.59/webapps/HealthfullU2-0.0.1-SNAPSHOT.war
+rsync --progress /Users/cz_michael/Google\ Drive/Work/workspace/HealthfullU2/target/HealthfullU2-0.0.2-SNAPSHOT.war /usr/local/apache-tomcat-7.0.59/webapps/HealthfullU2-0.0.2-SNAPSHOT.war
 
 wait
 echo "rsync ......... Done!"
@@ -35,7 +35,7 @@ echo "rsync ......... Done!"
 
 # extract war file into ROOT directory
 cd /usr/local/apache-tomcat-7.0.59/webapps/ROOT
-jar -xvf ../HealthfullU2-0.0.1-SNAPSHOT.war
+jar -xvf ../HealthfullU2-0.0.2-SNAPSHOT.war
 
 
 wait

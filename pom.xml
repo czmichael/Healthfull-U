@@ -4,13 +4,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>HealthfullU2</groupId>
 	<artifactId>HealthfullU2</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<org.springframework.version>3.2.3.RELEASE</org.springframework.version>
-		<appengine.target.version>1.9.17a</appengine.target.version>
+		<appengine.target.version>1.9.21</appengine.target.version>
 	</properties>
 
 	<prerequisites>
@@ -170,7 +170,8 @@
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
 			<version>1.4</version>
-		</dependency> -->
+		</dependency> 
+-->
 
 
 
@@ -211,17 +212,11 @@
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
-
-
 			<plugin>
-				<groupId>com.google.appengine</groupId>
-				<artifactId>gcloud-maven-plugin</artifactId>
-				<version>1.9.17a</version>
-				<configuration>
-					<gcloud_directory>/Users/cz_michael/App/google-cloud-sdk</gcloud_directory>
-				</configuration>
-			</plugin>
-
+                <groupId>com.google.appengine</groupId>
+                <artifactId>appengine-maven-plugin</artifactId>
+                <version>${appengine.target.version}</version>
+            </plugin>
 		</plugins>
 	</build>
 

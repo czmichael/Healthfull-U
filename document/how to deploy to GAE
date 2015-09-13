@@ -1,1 +1,30 @@
-* change webapp/WEB-INF/applicationContext.xml - use the correct "dataSource"
+
+* dump database, upload
+1. go to a console, type the following command:
+   1.1. cd /Users/cz_michael/Google Drive/Work/workspace/HealthfullU2/database 
+   1.2. mysqldump -uroot -p --add-drop-database --add-drop-table --add-locks --quick --databases healthfulu > hu_mysqldump
+
+
+2. go to Google developers console - (https://console.developers.google.com/project/healthfull-u)
+3. on the left hand side of the console, find "Storage->Cloud Storage->Browser".
+4. click on "hu-db" on the right hand side
+5. delete the original hu_mysqldump, upload the one just created.
+6. on the left hand side of the console, find "Cloud SQL".
+7. click on it, then on the right hand side, click on "healthfull-u:hu-db"
+8. click "import" button on top, on the "import data from cloud storage", put "hu-db/hu_mysqldump" behind "gs://", make sure format is selected as "SQL".
+9. make sure import is successful by looking at the popup window on right bottom corner, as well as in mysql workbench.
+
+  
+
+
+
+1. change webapp/WEB-INF/applicationContext.xml - use the GAE "dataSource"
+2. change src/main/webapp/WEB-INF/appengine-web.xml - "<version>" number
+3. change the "<version>" number in pom.xml
+4. change the snapshot version numbers in "hu_redeploy_localhost.sh"
+5. in src/main/webapp/static/js/healthfull_u/app.js, use line "var baseUrl = 'http://healthfull-u.appspot.com';", comment out "var baseUrl = 'http://localhost:8080'"
+6. type the following command
+	6.1 cd /Users/cz_michael/Google\ Drive/Work/workspace/HealthfullU2
+	6.2 mvn clean install
+	6.3 mvn appengine:update
+	
