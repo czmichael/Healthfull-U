@@ -1,0 +1,10 @@
+create a develop branch locally and remotely:
+1. git checkout -b develop
+2. git push origin develop
+
+
+to setup a project for git flow, run:
+$ git flow init
+answer all questions using default values
+
+
