@@ -1,3 +1,4 @@
 * change webapp/WEB-INF/applicationContext.xml - use the localhost "dataSource"
-* 5. in src/main/webapp/static/js/healthfull_u/app.js, use line "var baseUrl = 'http://localhost:8080'", comment out "var baseUrl = 'http://healthfull-u.appspot.com';"
+* in src/main/webapp/static/js/healthfull_u/app.js, use line 
+  "var baseUrl = 'http://localhost:8080'", comment out "var baseUrl = 'http://healthfull-u.appspot.com';"
 

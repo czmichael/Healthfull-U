@@ -32,7 +32,7 @@
 
  
  	<!-- Use this "dataSource" for localhost -->
-<!-- 
+ 
  	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
@@ -40,11 +40,11 @@
 		<property name="username" value="root" />
 		<property name="password" value="" />
 	</bean> 
---> 
+ 
 
 
 	<!-- Use this "dataSource" for GAE -->
-
+<!--
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.GoogleDriver" />
@@ -52,6 +52,7 @@
 		<property name="username" value="root" />
 		<property name="password" value="" />
 	</bean>
+-->	
 
 
 

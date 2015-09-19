@@ -15,3 +15,9 @@ then edit your code, commits to the feature branch...
 when feature implementation is done, code review is done, etc, one is 
 ready to merge the feature branch back to develop branch,run:
 $ git flow feature finish registration
+
+this will merge the feature branch into develop branch, and delete the feature branch, 
+all of which are done locally.
+
+to push the changes from local develop branch to remote develop branch, run:
+$ git push origin develop 
