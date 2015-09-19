@@ -7,4 +7,11 @@ to setup a project for git flow, run:
 $ git flow init
 answer all questions using default values
 
+then start a feature branch using:
+$  git flow feature start registration
 
+then edit your code, commits to the feature branch...
+
+when feature implementation is done, code review is done, etc, one is 
+ready to merge the feature branch back to develop branch,run:
+$ git flow feature finish registration
