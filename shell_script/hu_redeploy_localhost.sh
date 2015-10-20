@@ -10,6 +10,11 @@ mvn install
 wait
 echo "mvn clean install ......... Done!"
 
+cd /Users/cz_michael/Google\ Drive/Work/workspace/HealthfullU2/src/main/webapp/static/less/healthfull_u
+lessc healthfullU.less > ../../css/healthfull_u/healthfullU.css
+wait
+echo "less tranlate to css ......... Done!"
+
 # shutdown tomcat
 echo "" > /usr/local/apache-tomcat-7.0.59/logs/catalina.out
 cd /usr/local/apache-tomcat-7.0.59/bin

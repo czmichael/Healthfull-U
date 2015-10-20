@@ -23,8 +23,9 @@
 3. change the "<version>" number in pom.xml
 4. change the snapshot version numbers in "hu_redeploy_localhost.sh"
 5. in src/main/webapp/static/js/healthfull_u/app.js, use line "var baseUrl = 'http://healthfull-u.appspot.com';", comment out "var baseUrl = 'http://localhost:8080'"
-6. type the following command
-	6.1 cd /Users/cz_michael/Google\ Drive/Work/workspace/HealthfullU2
-	6.2 mvn clean install
-	6.3 mvn appengine:update
+6. in index.html, comment out the "<link... healthfullU.less>", use the css line.
+7. type the following command
+	7.1 cd /Users/cz_michael/Google\ Drive/Work/workspace/HealthfullU2
+	7.2 mvn clean install
+	7.3 mvn appengine:update
 	
