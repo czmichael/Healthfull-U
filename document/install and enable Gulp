@@ -1,0 +1,9 @@
+* change directory into the project you want to enable Gulp.
+* run the command: $ npm init. This will create a file named "package.json" under the 
+  project root.
+* run the command: $ npm install --save-dev gulp. This installs Gulp locally and save
+  this dependency info into the package.json file. 
+* run the command: $ npm install --save-dev gulp-util. This installs the Gulp utility.
+* create a file named "gulpfile.js" under the project root.
+* run the command: $ npm install --save-dev gulp-livereload. This installs the live 
+  reload module.
