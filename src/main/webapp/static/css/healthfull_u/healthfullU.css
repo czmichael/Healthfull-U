@@ -12,6 +12,9 @@ shape3 {
   -moz-border-radius: 60px;
   border-radius: 60px;
 }
+.test {
+  border: 5px solid red;
+}
 /*
  * Core: General Layout Style
  * -------------------------

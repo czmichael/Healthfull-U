@@ -55,7 +55,8 @@ wait
 echo "tomcat startup ......... Done!"
 
 
-more /usr/local/apache-tomcat-7.0.59/logs/catalina.out
+wait
+# start Gulp
+cd /Users/cz_michael/Google\ Drive/Work/workspace/HealthfullU2
+gulp
 
-
-tail /usr/local/apache-tomcat-7.0.59/logs/catalina.out
