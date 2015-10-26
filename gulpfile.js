@@ -13,7 +13,6 @@ livereload({ start: true });
 gulp.task('default', ['watch']);
 
 //======== Global Variables ==========
-
 var HEALTHFULL_U_TOMCAT_LOCATION = '/usr/local/apache-tomcat-7.0.59/webapps/ROOT/static';
 var HEALTHFULL_U_DEV_LOCATION = 'src/main/webapp/static';
 

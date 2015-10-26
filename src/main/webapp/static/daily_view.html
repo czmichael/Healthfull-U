@@ -1,10 +1,34 @@
-<!-- <ng-include src="'nav_bar.html'"></ng-include> -->
+<div class="wrapper">
+    <ng-include src="'header.html'"></ng-include>
+    <ng-include src="'side_bar_left.html'"></ng-include> 
+
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                Dashboard
+                <small>Control panel</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Dashboard</li>
+            </ol>
+        </section>
+
+        <section class="content"> 
+
+
+
+
+
+
+
 
 <div class="starter-template" ng-controller="FoodCtrl" cg-busy="myPromise">
-
 	<div class="demo_link" ng-click="getFoodInfo('2014-08-10')">Sunday - Aug 10th, 2014</div>
 	<div class="demo_link" ng-click="getFoodInfo('2014-08-11')">Monday - Aug 11th, 2014</div>
 	<div class="demo_link" ng-click="getFoodInfo('2014-08-12')">Tuesday - Aug 12th, 2014</div>
+
+
 
 
 	<h2>{{foodEntryDate}}</h2>
@@ -32,6 +56,7 @@
 			<div class="daily-view-entry" ng-repeat="foodEntry in foodEntryAggregate.other">{{foodEntry.food_entry_description}}</div>
 		</div>
 	</div>
+
 
 	<div class="dail-view-right">
 		<h5>Nutrition Summary of {{foodEntryDate}}</h5>
@@ -114,9 +139,21 @@
 		</div>
 
 	</div>
+
+
+
+
+
+</div> 
+
+
+
+
+
+
+
+ 		</section>
+    </div>
+
+    <ng-include src="'footer.html'"></ng-include> 
 </div>
-
-
-
-
-
