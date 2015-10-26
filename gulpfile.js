@@ -65,9 +65,15 @@ gulp.task('less', function () {
 		.pipe(less())
 		.pipe(gulp.dest(HEALTHFULL_U_TOMCAT_LOCATION + '/css/healthfull_u'))
 		.pipe(livereload())
-		.pipe(notify('======== less done. =========='));;
+		.pipe(notify('======== less done. =========='));
 });
 
+gulp.task('image', function () {
+	return gulp.src(HEALTHFULL_U_DEV_LOCATION + '/img/*')
+		.pipe(gulp.dest(HEALTHFULL_U_TOMCAT_LOCATION + '/img'))
+		.pipe(livereload())
+		.pipe(notify('======== image done. =========='));
+});
 
 
 
@@ -80,6 +86,7 @@ gulp.task('watch', function() {
 	gulp.watch(HEALTHFULL_U_DEV_LOCATION + '/plugins/AdminLTE/js/*.js', ['jshint', 'admin-lte']);
 	gulp.watch(HEALTHFULL_U_DEV_LOCATION + '/*.html', ['copy-html']);
 	gulp.watch(HEALTHFULL_U_DEV_LOCATION + '/less/**/*.less', ['less']);
+	gulp.watch(HEALTHFULL_U_DEV_LOCATION + '/img/*', ['image']);
 });
 
 
